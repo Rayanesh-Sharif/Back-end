@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'podcast',
     'blog',
     'gallery',
+    'staff',
 ]
 
 MIDDLEWARE = [
