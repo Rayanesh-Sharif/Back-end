@@ -7,3 +7,4 @@ class GalleryPhoto(TimeStampedModel):
     caption = models.CharField(max_length=256)
     attenders = models.TextField(help_text='All attenders comma or new line seperated here')
     shooting_date = models.DateField()
+    publishing_year = models.IntegerField()

@@ -10,5 +10,6 @@ class Issue(TimeStampedModel):
     subject = models.CharField(max_length=32)
     pages_number = models.IntegerField()
     publishing_date = models.DateField()
+    publishing_year = models.IntegerField()
     is_issue = models.BooleanField(default=True)
     download_count = models.IntegerField()
