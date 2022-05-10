@@ -1,16 +1,19 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import generics
 
 from .models import Podcast
 from .serializers import PodcastSerializer
+from filters import PodcastFilter
+
+from django_filters import rest_framework as filters
 
 
-class PodcastList(APIView):
-
-    def get(self, request):
-        podcasts = Podcast.objects.all()
-        serializer = PodcastSerializer(podcasts, many=True)
-        return Response(serializer.data)
+class PodcastList(generics.ListAPIView):
+    queryset = Podcast.objects.all()
+    serializer_class = PodcastSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = PodcastFilter
 
 
 class PodcastDetail(APIView):

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "bootstrap4",
     'django_tables2',
     'django_celery_results',
+    'django_filters',
     'issue',
     'podcast',
     'blog',
@@ -141,6 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': 'django_filters.rest_framework.DjangoFilterBackend',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.CursorPagination',
     'PAGE_SIZE': 10,
 }
