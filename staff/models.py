@@ -1,7 +1,8 @@
 from django.db import models
+from model_utils.models import TimeStampedModel
 
 
-class Staff(models.Model):
+class Staff(TimeStampedModel):
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32)
     position = models.CharField(max_length=64)

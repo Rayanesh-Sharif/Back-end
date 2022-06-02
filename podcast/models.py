@@ -10,5 +10,4 @@ class Podcast(TimeStampedModel):
     subject = models.CharField(max_length=32)
     length = models.DurationField()
     publishing_date = models.DateField()
-    download_count = models.IntegerField()
-    publishing_year = models.IntegerField()
+    views_count = models.PositiveIntegerField(default=0)

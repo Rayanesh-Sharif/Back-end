@@ -1,13 +1,12 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework.generics import ListAPIView
 
 from .models import Staff
 from .serializers import StaffSerializer
 
+from django_filters import rest_framework as filters
 
-class StaffView(APIView):
-    
-    def get(self, request):
-        staffs = Staff.objects.all()
-        serializer = StaffSerializer(staffs, many=True)
-        return Response(serializer.data)
+
+class StaffList(ListAPIView):
+    queryset = Staff.objects.all()
+    serializer_class = StaffSerializer
+    filter_backends = (filters.DjangoFilterBackend, )

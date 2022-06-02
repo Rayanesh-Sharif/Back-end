@@ -6,5 +6,5 @@ from .models import BlogPost
 class BlogPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogPost
-        fields = ['id', 'post_text', 'post_image', 'name', 'contributors', 'subject',
-                  'reading_time', 'posting_date']
+        fields = ['id', 'post_text', 'post_image', 'contributors', 'subject',
+                  'reading_time', 'posting_date', 'views_count']
